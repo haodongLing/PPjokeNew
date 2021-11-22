@@ -1,0 +1,4 @@
+rootProject.name = "PPjokeNew"
+include ':app'
+
+include ':lib-common'
