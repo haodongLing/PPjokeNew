@@ -2,12 +2,11 @@ package io.github.haodongling.lib.common.util;
 
 import android.util.Log;
 
-
-import io.github.haodongling.lib.common.BuildConfig;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import io.github.haodongling.lib.common.BuildConfig;
 
 /**
  * describe : Log打印日志类

@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModelStoreOwner
 import com.alibaba.android.arouter.launcher.ARouter
 import com.haodong.launch.dispatcher.TaskDispatcher
 import io.github.haodongling.lib.common.tasks.X5WebTask
-import io.github.haodongling.lib.common.util.FFLog
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.api.*
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter

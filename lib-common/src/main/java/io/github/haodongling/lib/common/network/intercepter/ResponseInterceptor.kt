@@ -1,26 +1,21 @@
-package io.github.haodongling.lib.common.network.intercepter;
+package io.github.haodongling.lib.common.network.intercepter
 
-import io.github.haodongling.lib.common.util.FFLog;
-
-import org.jetbrains.annotations.NotNull;
-
-import java.io.IOException;
-
-import okhttp3.Interceptor;
-import okhttp3.Response;
+import io.github.haodongling.lib.common.util.FFLog
+import okhttp3.Interceptor
+import okhttp3.Response
+import java.io.IOException
 
 /**
  * Author: tangyuan
  * Time : 2021/8/17
  * Description:
  */
-public class ResponseInterceptor implements Interceptor {
-    @NotNull
-    @Override
-    public Response intercept(@NotNull Chain chain) throws IOException {
-        Response response=chain.proceed(chain.request());
-        FFLog.d("reponse-->"+response.toString());
-//        try {
+class ResponseInterceptor : Interceptor {
+    @Throws(IOException::class)
+    override fun intercept(chain: Interceptor.Chain): Response {
+        val response: Response = chain.proceed(chain.request())
+        FFLog.d("reponse-->$response")
+        //        try {
 //            if (response.body()!=null){
 //                BufferedSource source = response.body().source();
 //                Buffer buffer = source.buffer();
@@ -32,6 +27,6 @@ public class ResponseInterceptor implements Interceptor {
 //        } catch (JSONException e) {
 //            e.printStackTrace();
 //        }
-        return response;
+        return response
     }
 }
