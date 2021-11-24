@@ -1,9 +1,13 @@
 package io.github.haodongling.lib.common.ext
 
 import android.app.Activity
+import android.view.View
+import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import androidx.databinding.adapters.TextViewBindingAdapter.setTextSize
 import androidx.recyclerview.widget.RecyclerView
 import com.chad.library.adapter.base.BaseQuickAdapter
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
 
 /**
  * Author: tangyuan

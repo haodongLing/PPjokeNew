@@ -9,15 +9,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        android:layout_height="match_parent">
 
         <fragment
             android:id="@+id/host_fragment"
             android:name="io.github.haodongling.lib.common.navigation.NavHostFragmentHideShow"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:defaultNavHost="true" />
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/main_navation" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
