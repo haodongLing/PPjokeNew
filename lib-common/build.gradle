@@ -90,7 +90,11 @@ dependencies {
     api Deps.GitHub.shadowLayout
     api Deps.GitHub.materialprogressbar
     api Deps.GitHub.launch_dispatcher
-    implementation Deps.GitHub.mmkv
+    api Deps.GitHub.mmkv
+    api Deps.GitHub.exoplayer_core
+    api Deps.GitHub.exoplayer_dash
+    api Deps.GitHub.exoplayer_ui
+
     /*kotlin*/
     api Deps.Kotlin.core_ktx
     api Deps.Kotlin.kotlin_stdlib

@@ -31,7 +31,7 @@ open class App : Application(), ViewModelStoreOwner {
     companion object {
         var CONTEXT: Context by Delegates.notNull()
         var APP: App by Delegates.notNull()
-        lateinit var appViewModel:AppViewModel
+
 
     }
 
@@ -51,7 +51,7 @@ open class App : Application(), ViewModelStoreOwner {
         dispatcher.addTask(X5WebTask()).start()
         dispatcher.await()
         MMKV.initialize(this.filesDir.absolutePath + "/mmkv")
-        appViewModel = getAppViewModelProvider().get(AppViewModel::class.java)
+
 
     }
 
@@ -92,4 +92,3 @@ open class App : Application(), ViewModelStoreOwner {
     }
 
 }
-val appViewModel by lazy { App.appViewModel }

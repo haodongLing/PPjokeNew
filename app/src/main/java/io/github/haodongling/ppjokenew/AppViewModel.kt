@@ -1,6 +1,7 @@
-package io.github.haodongling.lib.common
+package io.github.haodongling.ppjokenew
 
 import io.github.haodongling.lib.common.core.BaseViewModel
+import io.github.haodongling.ppjokenew.model.Comment
 
 /**
  * Author: tangyuan
@@ -8,6 +9,8 @@ import io.github.haodongling.lib.common.core.BaseViewModel
  * Description:
  */
 class AppViewModel : BaseViewModel() {
+    fun toggleCommentLike(comment:Comment)
+    {
 
-
+    }
 }

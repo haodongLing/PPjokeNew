@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="feed"
+            type="Feed" />
+
+        <variable
+            name="lifeCycleOwner"
+            type="androidx.lifecycle.LifecycleOwner" />
+
+        <import type="io.github.haodongling.ppjokenew.model.Feed"></import>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <include
+            layout="@layout/layout_feed_author"
+            app:user="@{feed.author}"></include>
+        <include layout="@layout/layout_feed_tag"></include>
+
+        <include
+            layout="@layout/layout_feed_text"
+            app:feedText="@{feed.feeds_text}"
+            app:lines="@{3}"></include>
+
+        <io.github.haodongling.ppjokenew.widget.PPImageView
+            android:id="@+id/feed_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp" />
+
+        <include
+            layout="@layout/layout_feed_tag"
+            app:tagText="@{feed.activityText}"></include>
+        <include
+            layout="@layout/layout_feed_top_comment"
+            app:comment="@{feed.topComment}"></include>
+
+        <include
+            android:id="@+id/interaction_binding"
+            layout="@layout/layout_feed_interaction"
+            app:lifeCycleOwner="@{lifeCycleOwner}"
+            app:feed="@{feed}"></include>
+
+    </LinearLayout>
+</layout>

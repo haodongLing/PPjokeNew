@@ -73,6 +73,7 @@ object Versions {
     const val coroutines_adapter="0.9.2"
     const val launch_dispatcher="1.0.0"
     const val BottomNavigationViewEx="2.0.4"
+    const val exo_player="2.10.4"
 
 }
 
@@ -171,6 +172,10 @@ object Deps {
         const val coroutines_adapter= "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.coroutines_adapter}"
         const val launch_dispatcher=  "io.github.haodongling:Launch_Dispatcher:${Versions.launch_dispatcher}"
         const val BottomNavigationViewEx="com.github.ittianyu:BottomNavigationViewEx:${Versions.BottomNavigationViewEx}"
+        //视频播放组件
+        const val exoplayer_core="com.google.android.exoplayer:exoplayer-core:${Versions.exo_player}"
+        const val exoplayer_dash="com.google.android.exoplayer:exoplayer-dash:${Versions.exo_player}"
+        const val exoplayer_ui="com.google.android.exoplayer:exoplayer-ui:${Versions.exo_player}"
 
 
 
