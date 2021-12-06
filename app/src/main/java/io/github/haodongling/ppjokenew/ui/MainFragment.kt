@@ -54,7 +54,7 @@ class MainFragment : BaseVMFragment<FragmentMainBinding>(R.layout.fragment_main)
                 override fun createFragment(position: Int): Fragment {
                     when (position) {
                         0 -> {
-                            return HomeFragment()
+                            return HomeFragment.create("all")
                         }
                         1 -> {
                             return SofaFragment()

@@ -74,6 +74,7 @@ object Versions {
     const val launch_dispatcher="1.0.0"
     const val BottomNavigationViewEx="2.0.4"
     const val exo_player="2.10.4"
+    const val magicIndicator="1.7.0"
 
 }
 
@@ -130,6 +131,7 @@ object Deps {
             "com.github.CymChad:BaseRecyclerViewAdapterHelper:${Versions.baseRecyclerViewAdapterHelper}"
         const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
         const val glide_compiler = "com.github.bumptech.glide:compiler:${Versions.glide_compiler}"
+        const val glide_okhttp3_integration="com.github.bumptech.glide:okhttp3-integration:${Versions.glide}"
 
         //    const val verticalTabLayout = "q.rorbin:VerticalTabLayout:${Versions.verticalTabLayout}"
         const val flowLayout = "com.hyman:flowlayout-lib:${Versions.flowLayout}"
@@ -176,6 +178,8 @@ object Deps {
         const val exoplayer_core="com.google.android.exoplayer:exoplayer-core:${Versions.exo_player}"
         const val exoplayer_dash="com.google.android.exoplayer:exoplayer-dash:${Versions.exo_player}"
         const val exoplayer_ui="com.google.android.exoplayer:exoplayer-ui:${Versions.exo_player}"
+        //指示器库
+        const val magic_indicator="com.github.hackware1993:MagicIndicator:${Versions.magicIndicator}"
 
 
 

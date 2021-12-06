@@ -15,13 +15,6 @@ import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 
-
-/**
- * 描述：加载进度拦截器替换ProgressResponseBody
- *
- * @author Cuizhen
- * @date 2018/9/17
- */
 public class ProgressInterceptor implements Interceptor {
     private static final String TAG = ProgressInterceptor.class.getSimpleName();
 

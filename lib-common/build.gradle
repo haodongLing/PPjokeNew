@@ -44,8 +44,8 @@ android {
 }
 kapt {
     arguments {
-        arg("AROUTER_MODULE_NAME", "common")
-        arg("room.incremental", "true")
+        arg("AROUTER_MODULE_NAME",project.getName())
+//        arg("room.incremental", "true")
 //        arg("AROUTER_GENERATE_DOC", "enable")
     }
 }
@@ -67,6 +67,7 @@ dependencies {
     api Deps.GitHub.baseRecyclerViewAdapterHelper
     api Deps.GitHub.glide
     kapt Deps.GitHub.glide_compiler
+    api  Deps.GitHub.glide_okhttp3_integration
     api Deps.GitHub.flowLayout
     api Deps.GitHub.persistentCookieJar
     api Deps.GitHub.licensesDialog
@@ -94,6 +95,7 @@ dependencies {
     api Deps.GitHub.exoplayer_core
     api Deps.GitHub.exoplayer_dash
     api Deps.GitHub.exoplayer_ui
+    api Deps.GitHub.magic_indicator
 
     /*kotlin*/
     api Deps.Kotlin.core_ktx

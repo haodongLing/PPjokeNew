@@ -1,9 +1,10 @@
-package io.github.haodongling.lib.common.network.api
+package io.github.haodongling.ppjokenew.api
 
 import com.franmontiel.persistentcookiejar.PersistentCookieJar
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor
 import io.github.haodongling.lib.common.App
+import io.github.haodongling.lib.common.network.api.BaseRetrofitClient
 import io.github.haodongling.lib.common.util.NetWorkUtils
 import okhttp3.Cache
 import okhttp3.CacheControl
@@ -16,6 +17,8 @@ import java.io.File
  * on 2018/3/13 15:45
  */
 object RetrofitClient : BaseRetrofitClient() {
+    val userService=getService(UserService::class.java)
+    val FeedService =getService(FeedService::class.java)
 
 
     private val cookieJar by lazy { PersistentCookieJar(SetCookieCache(), SharedPrefsCookiePersistor(App.CONTEXT)) }

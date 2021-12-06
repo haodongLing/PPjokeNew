@@ -13,12 +13,6 @@ import okio.Okio;
 import okio.Source;
 import okio.Timeout;
 
-/**
- * 描述：
- *
- * @author Cuizhen
- * @date 2018/9/17
- */
 public class ProgressResponseBody extends ResponseBody {
 
     private final String url;

@@ -3,55 +3,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
         <variable
             name="feed"
-            type="Feed" />
-
+            type="io.github.haodongling.ppjokenew.model.Feed" />
         <variable
             name="lifeCycleOwner"
             type="androidx.lifecycle.LifecycleOwner" />
-
-        <import type="io.github.haodongling.ppjokenew.model.Feed" />
 
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
         android:orientation="vertical"
-        android:padding="10dp">
-
+        android:paddingTop="10dp">
         <include
             layout="@layout/layout_feed_author"
-            app:user="@{feed.author}" />
-
-        <include layout="@layout/layout_feed_tag" />
+            app:user="@{feed.author}"/>
 
         <include
             layout="@layout/layout_feed_text"
             app:feedText="@{feed.feeds_text}"
-            app:lines="@{3}" />
-
-        <io.github.haodongling.ppjokenew.widget.PPImageView
-            android:id="@+id/feed_image"
-            android:layout_width="match_parent"
+            app:lines="@{3}"/>
+        <io.github.haodongling.ppjokenew.widget.ListPlayerView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp" />
+            android:id="@+id/list_player_view"
+            android:layout_marginBottom="10dp"/>
 
         <include
             layout="@layout/layout_feed_tag"
-            app:tagText="@{feed.activityText}" />
+            app:tagText="@{feed.activityText}"/>
 
         <include
             layout="@layout/layout_feed_top_comment"
-            app:comment="@{feed.topComment}" />
+            app:comment="@{feed.topComment}"/>
 
 <!--        <include-->
 <!--            android:id="@+id/interaction_binding"-->
 <!--            layout="@layout/layout_feed_interaction"-->
 <!--            app:feed="@{feed}"-->
 <!--            app:lifeCycleOwner="@{lifeCycleOwner}"/>-->
-
     </LinearLayout>
 </layout>

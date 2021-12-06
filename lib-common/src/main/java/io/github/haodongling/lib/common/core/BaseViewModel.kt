@@ -22,22 +22,6 @@ open class BaseViewModel : ViewModel() {
             block
         }
     }
-    open class UiState<T>(
-        val isLoading: Boolean = false,
-        val isRefresh: Boolean = false,
-        val isSuccess: T? = null,
-        val isError: String?= null
-    )
-
-
-    open class BaseUiModel<T>(
-        var showLoading: Boolean = false,
-        var showError: String? = null,
-        var showSuccess: T? = null,
-        var showEnd: Boolean = false, // 加载更多
-        var isRefresh: Boolean = false // 刷新
-
-    )
     fun <T> BaseViewModel.launch(
         block: () -> T,
         success: (T) -> Unit,

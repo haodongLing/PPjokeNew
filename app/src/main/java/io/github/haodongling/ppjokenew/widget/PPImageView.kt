@@ -1,6 +1,7 @@
 package io.github.haodongling.ppjokenew.widget
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.text.TextUtils
 import android.util.AttributeSet
@@ -14,9 +15,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestBuilder
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
+import io.github.haodongling.lib.common.glide.progress.GlideApp
 import io.github.haodongling.lib.common.util.PixUtils
+import io.github.haodongling.ppjokenew.ext.doBlur
 import io.github.haodongling.ppjokenew.ext.setOutline
 
 /**
@@ -46,10 +50,23 @@ class PPImageView : AppCompatImageView {
 
         }
 
+        @BindingAdapter(value = ["blur_url", "radius"])
+        fun setBlurImageUrl(imageView: ImageView, blurUrl: String, radius: Int) {
+            val simpleTarget = object : CustomTarget<Bitmap>() {
+                override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
+                    imageView.setImageBitmap(resource.doBlur(radius, true, imageView.context) ?: resource)
+                }
+
+                override fun onLoadCleared(placeholder: Drawable?) {
+                }
+            }
+            GlideApp.with(imageView.context).asBitmap().load(blurUrl).into(simpleTarget)
+        }
+
     }
 
-    constructor(context: Context) : super(context)
-    constructor(context: Context, attr: AttributeSet) : super(context, attr)
+    constructor(context: Context) : super(context,null)
+    constructor(context: Context, attr: AttributeSet) : super(context, attr,0)
     constructor(context: Context, attr: AttributeSet, defStyle: Int) : super(context, attr, defStyle) {
         setOutline(attr, defStyle, 0)
     }
@@ -99,5 +116,9 @@ class PPImageView : AppCompatImageView {
             params.leftMargin = if (height > width) PixUtils.dp2px(marginLeft) else 0
         }
         layoutParams = params
+    }
+
+    fun setImageUrl(imageUrl: String) {
+        setImageUrl(this, imageUrl, false)
     }
 }
